@@ -1,6 +1,8 @@
 package perfil;
 
 public class Cliente extends Pessoa{
+		
+	private int carrinho;
 	
 	@Override
 	public Boolean validaTipoUsuario() {
@@ -10,5 +12,11 @@ public class Cliente extends Pessoa{
 		return true;
 	}
 	
-	// TODO Criar um método para fazer Reserva
+	public int getCarrinho() {
+		return carrinho;
+	}
+	public void setCarrinho(int carrinho) {
+		this.carrinho = carrinho;
+	}
+	
 }

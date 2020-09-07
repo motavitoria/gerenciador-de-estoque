@@ -10,5 +10,4 @@ public class Vendedor extends Pessoa{
 		return true;
 	}
 	
-	// TODO Criar um método para criar uma Refeição
 }

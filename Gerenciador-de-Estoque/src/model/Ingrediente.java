@@ -1,18 +1,27 @@
 package model;
 
-public class Ingrediente extends Restaurante {
+public class Ingrediente {
 	
+	private int idIngrediente;
 	private String nomeIngrediente;
 	private String medida;
 	private int quantidade;
 	private int quantidadeMinima;
 	
-	public Ingrediente(int id, String nomeIngrediente, String medida, int quantidade, int quantidadeMinima) {
-		this.id = id;
+	public Ingrediente(int idIngrediente, String nomeIngrediente, String medida, int quantidade, int quantidadeMinima) {
+		this.idIngrediente = idIngrediente;
 		this.nomeIngrediente = nomeIngrediente;
 		this.medida = medida;
 		this.quantidade = quantidade;
 		this.quantidadeMinima = quantidadeMinima;
+	}
+	
+	public int getIdIngrediente() {
+		return idIngrediente;
+	}
+
+	public void setIdIngrediente(int idIngrediente) {
+		this.idIngrediente = idIngrediente;
 	}
 
 	public String getNomeIngrediente() {

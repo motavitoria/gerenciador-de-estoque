@@ -2,11 +2,20 @@ package model;
 
 import java.util.List;
 
-public class Estoque extends Restaurante {
+public class Estoque {
 	
+	private int idEstoque;
 	private List<Reserva> reservas;
 	private List<Ingrediente> ingredientesEstoque;
 	
+	public int getIdEstoque() {
+		return idEstoque;
+	}
+
+	public void setIdEstoque(int idEstoque) {
+		this.idEstoque = idEstoque;
+	}
+
 	public List<Reserva> getReservas() {
 		return reservas;
 	}

@@ -2,15 +2,24 @@ package model;
 
 import java.util.List;
 
-public class Reserva extends Restaurante {
+public class Reserva {
 	
+	private int idReserva;
 	private List<Refeicao> refeicoesReservadas;
 	private int quantidade;
 	
-	public Reserva(int id, List<Refeicao> refeicoesReservadas, int quantidade) {
-		this.id = id;
+	public Reserva(int idReserva, List<Refeicao> refeicoesReservadas, int quantidade) {
+		this.idReserva = idReserva;
 		this.refeicoesReservadas = refeicoesReservadas;
 		this.quantidade = quantidade;
+	}
+	
+	public int getIdReserva() {
+		return idReserva;
+	}
+
+	public void setIdReserva(int idReserva) {
+		this.idReserva = idReserva;
 	}
 
 	public List<Refeicao> getRefeicoesReservadas() {

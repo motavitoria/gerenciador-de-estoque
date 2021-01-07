@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="paneCriaIngrediente" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CriaIngredienteController">
+   <children>
+      <ToolBar prefHeight="40.0" prefWidth="335.0">
+         <items>
+            <Label text="INGREDIENTE" translateX="120.0" />
+         </items>
+      </ToolBar>
+      <Label layoutX="30.0" layoutY="322.0" text="Nome do Ingrediente:" underline="true">
+         <font>
+            <Font name="Calibri Light" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="30.0" layoutY="358.0" text="Medida:" underline="true">
+         <font>
+            <Font name="Calibri Light" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="30.0" layoutY="395.0" text="Quantidade:" underline="true">
+         <font>
+            <Font name="Calibri Light" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="fieldNomeIngrediente" layoutX="199.0" layoutY="322.0" prefHeight="25.0" prefWidth="122.0" promptText="Ex: Arroz" />
+      <TextField fx:id="fieldMedidaIngrediente" layoutX="100.0" layoutY="356.0" prefHeight="25.0" prefWidth="220.0" promptText="Ex: KG" />
+      <TextField fx:id="fieldQuantidadeIngrediente" layoutX="125.0" layoutY="393.0" prefHeight="25.0" prefWidth="195.0" promptText="Ex: 10" />
+      <Button fx:id="botaoAtualizaIngrediente" defaultButton="true" layoutX="52.0" layoutY="449.0" mnemonicParsing="false" onAction="#atualizaIngrediente" prefHeight="60.0" prefWidth="96.0" text="Atualiza">
+         <font>
+            <Font name="Calibri Light" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="botaoCriaIngrediente" defaultButton="true" layoutX="175.0" layoutY="449.0" mnemonicParsing="false" onAction="#criaIngrediente" prefHeight="60.0" prefWidth="96.0" text="Cria">
+         <font>
+            <Font name="Calibri Light" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="botaoVoltarIngrediente" defaultButton="true" layoutX="113.0" layoutY="522.0" mnemonicParsing="false" onAction="#voltarPrato" prefHeight="60.0" prefWidth="96.0" text="Voltar">
+         <font>
+            <Font name="Calibri Light" size="18.0" />
+         </font>
+      </Button>
+      <Separator layoutX="68.0" layoutY="310.0" prefWidth="200.0" />
+      <Separator layoutX="68.0" layoutY="431.0" prefWidth="200.0" />
+      <TableView fx:id="tableIngrediente" layoutX="7.0" layoutY="40.0" prefHeight="263.0" prefWidth="320.0">
+        <columns>
+          <TableColumn fx:id="colunaNomeIngrediente" prefWidth="153.0" text="Nome" />
+          <TableColumn fx:id="colunaMedidaIngrediente" prefWidth="84.0" text="Medida" />
+            <TableColumn fx:id="colunaQuantidadeIng" prefWidth="82.0" text="Quantidade" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

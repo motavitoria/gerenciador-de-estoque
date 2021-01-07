@@ -1,76 +1,62 @@
-package refeicao;
+package model;
 
-import java.util.Date;
+import java.util.List;
 
-public class Prato extends Estoque{
+public class Prato extends Restaurante {
 	
-	protected String tipoPrato;
-	protected String nomePrato;
-	protected int limitePrato;
-	protected double precoPrato;
+	private String tipo;
+	private String nomePrato;
+	private int quantidadeLimite;
+	private long preco;
+	private List<Ingrediente> ingredientes;
 	
-	public Prato(int idObjeto) {
-		super(idObjeto);
-		this.idObjeto = idObjeto;
+	public Prato(int id, String tipo, String nomePrato, int quantidadeLimite, long preco, List<Ingrediente> ingredientes) {
+		this.id = id;
+		this.tipo = tipo;
+		this.nomePrato = nomePrato;
+		this.quantidadeLimite = quantidadeLimite;
+		this.preco = preco;
+		this.ingredientes = ingredientes;
 	}
 	
-	public String getTipoPrato() {
-		return tipoPrato;
+	public String getTipo() {
+		return tipo;
 	}
-
-	public void setTipoPrato(String tipoPrato) {
-		this.tipoPrato = tipoPrato;
+	
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
-
+	
 	public String getNomePrato() {
 		return nomePrato;
 	}
-
+	
 	public void setNomePrato(String nomePrato) {
 		this.nomePrato = nomePrato;
 	}
-
-	public int getLimitePrato() {
-		return limitePrato;
-	}
-
-	public void setLimitePrato(int limitePrato) {
-		this.limitePrato = limitePrato;
-	}
-
-	public double getPrecoPrato() {
-		return precoPrato;
-	}
-
-	public void setPrecoPrato(double precoPrato) {
-		this.precoPrato = precoPrato;
-	}
-
 	
-	public void atualizaPrato(String tipoPrato, String nomePrato, double precoPrato, int idObjeto) {
-		this.tipoPrato = tipoPrato;
-		this.nomePrato = nomePrato;
-		this.precoPrato = precoPrato;
-		this.idObjeto = idObjeto;
-		// TODO criar uma String sql com a query de UPDATE
+	public int getQuantidadeLimite() {
+		return quantidadeLimite;
 	}
-
 	
-	public void excluiPrato(int idObjeto) {
-		// TODO criar uma String sql com a query de DELETE
-		
+	public void setQuantidadeLimite(int quantidadeLimite) {
+		this.quantidadeLimite = quantidadeLimite;
 	}
-
 	
-	public void criaPrato(String tipoPrato, String nomePrato, double precoPrato, int idObjeto) {
-		// TODO criar uma String sql com a query de INSERT
-		
+	public long getPreco() {
+		return preco;
 	}
-
 	
-	public void adicionaPratoRefeicao(String tipoPrato, String nomePrato, double precoPrato, int idObjeto, Refeicao idRefeicao) {
-		// TODO criar uma String sql com a query de INSERT para junção de relacionamento (PRATO x REFEICAO)
-		
+	public void setPreco(long preco) {
+		this.preco = preco;
 	}
-
+	
+	public List<Ingrediente> getIngredientes() {
+		return ingredientes;
+	}
+	
+	public void setIngredientes(List<Ingrediente> ingredientes) {
+		this.ingredientes = ingredientes;
+	}
+	
 }

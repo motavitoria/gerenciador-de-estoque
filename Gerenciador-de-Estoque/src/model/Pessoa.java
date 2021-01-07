@@ -1,37 +1,51 @@
-package perfil;
+package model;
 
 public abstract class Pessoa {
 	
-	protected int idUsuario;
-	protected String nomeUsuario;
-	protected String senhaUsuario;
-	protected String tipoUsuario;
+	private int idUsuario;
+	private String nomeUsuario;
+	private int senhaUsuario;
+	private String tipoUsuario;
+	private String cpfUsuario;
 	
 	public int getIdUsuario() {
 		return idUsuario;
 	}
+	
 	public void setIdUsuario(int idUsuario) {
 		this.idUsuario = idUsuario;
 	}
+	
 	public String getNomeUsuario() {
 		return nomeUsuario;
 	}
+	
 	public void setNomeUsuario(String nomeUsuario) {
 		this.nomeUsuario = nomeUsuario;
 	}
-	public String getSenhaUsuario() {
+	
+	public int getSenhaUsuario() {
 		return senhaUsuario;
 	}
-	public void setSenhaUsuario(String senhaUsuario) {
+	
+	public void setSenhaUsuario(int senhaUsuario) {
 		this.senhaUsuario = senhaUsuario;
 	}
+	
 	public String getTipoUsuario() {
 		return tipoUsuario;
 	}
+	
 	public void setTipoUsuario(String tipoUsuario) {
 		this.tipoUsuario = tipoUsuario;
 	}
 	
-	public abstract Boolean validaTipoUsuario();
-
+	public String getCpfUsuario() {
+		return cpfUsuario;
+	}
+	
+	public void setCpfUsuario(String cpfUsuario) {
+		this.cpfUsuario = cpfUsuario;
+	}
+	
 }

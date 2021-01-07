@@ -1,18 +1,20 @@
-package refeicao;
+package model;
 
-import java.util.Date;
-
-public class Ingrediente extends Estoque{
-
-	protected String nomeIngrediente;
-	protected String unidadeMedida;
-	protected int quantidadeIngrediente;
+public class Ingrediente extends Restaurante {
 	
-	public Ingrediente(int idObjeto) {
-		super(idObjeto);
-		this.idObjeto = idObjeto;
+	private String nomeIngrediente;
+	private String medida;
+	private int quantidade;
+	private int quantidadeMinima;
+	
+	public Ingrediente(int id, String nomeIngrediente, String medida, int quantidade, int quantidadeMinima) {
+		this.id = id;
+		this.nomeIngrediente = nomeIngrediente;
+		this.medida = medida;
+		this.quantidade = quantidade;
+		this.quantidadeMinima = quantidadeMinima;
 	}
-	
+
 	public String getNomeIngrediente() {
 		return nomeIngrediente;
 	}
@@ -21,48 +23,28 @@ public class Ingrediente extends Estoque{
 		this.nomeIngrediente = nomeIngrediente;
 	}
 
-	public String getUnidadeMedida() {
-		return unidadeMedida;
+	public String getMedida() {
+		return medida;
 	}
 
-	public void setUnidadeMedida(String unidadeMedida) {
-		this.unidadeMedida = unidadeMedida;
+	public void setMedida(String medida) {
+		this.medida = medida;
 	}
 
-	public int getQuantidadeIngrediente() {
-		return quantidadeIngrediente;
+	public int getQuantidade() {
+		return quantidade;
 	}
 
-	public void setQuantidadeIngrediente(int quantidadeIngrediente) {
-		this.quantidadeIngrediente = quantidadeIngrediente;
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
 	}
 
+	public int getQuantidadeMinima() {
+		return quantidadeMinima;
+	}
+
+	public void setQuantidadeMinima(int quantidadeMinima) {
+		this.quantidadeMinima = quantidadeMinima;
+	}
 	
-	public void atualizaIngrediente(String nomeIngrediente, String unidadeMedida, int quantidadeIngrediente, int idObjeto) {
-		this.nomeIngrediente = nomeIngrediente;
-		this.unidadeMedida = unidadeMedida;
-		this.quantidadeIngrediente = quantidadeIngrediente;
-		this.idObjeto = idObjeto;
-		// TODO criar uma String sql com a query de UPDATE
-		
-	}
-
-	
-	public void excluiIngrediente(int idObjeto) {
-		// TODO criar uma String sql com a query de DELETE
-		
-	}
-
-	
-	public void criaIngrediente(String nomeIngrediente, String unidadeMedida, int quantidadeIngrediente, int idObjeto) {
-		// TODO criar uma String sql com a query de INSERT
-		
-	}
-
-	
-	public void adicionaIngredientePrato(String nomeIngrediente, String unidadeMedida, int quantidadeIngrediente, int idObjeto, Prato idPrato) {
-		// TODO criar uma String sql com a query de INSERT para junção de relacionamento (INGREDIENTE x PRATO)
-		
-	}
-
 }

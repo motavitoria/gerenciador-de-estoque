@@ -1,13 +1,26 @@
-package perfil;
+package model;
+
+import java.util.List;
 
 public class Vendedor extends Pessoa{
-
-	@Override
-	public Boolean validaTipoUsuario() {
-		if(this.tipoUsuario != "V") {
-			return false;
-		}
-		return true;
+	
+	private int totalRefeicoes;
+	private List<Refeicao> refeicoes;
+	
+	public int getTotalRefeicoes() {
+		return totalRefeicoes;
+	}
+	
+	public void setTotalRefeicoes(int totalRefeicoes) {
+		this.totalRefeicoes = totalRefeicoes;
+	}
+	
+	public List<Refeicao> getRefeicoes() {
+		return refeicoes;
+	}
+	
+	public void setRefeicoes(List<Refeicao> refeicoes) {
+		this.refeicoes = refeicoes;
 	}
 	
 }

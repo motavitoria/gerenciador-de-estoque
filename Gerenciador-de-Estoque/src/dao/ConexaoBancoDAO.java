@@ -1,8 +1,8 @@
-package conexao;
+package dao;
 
 import java.sql.Connection;
 
-public abstract class ConexaoBD {
+public abstract class ConexaoBancoDAO {
 	 protected Connection conn;
 	 protected String servidor;
 	 protected String bd;

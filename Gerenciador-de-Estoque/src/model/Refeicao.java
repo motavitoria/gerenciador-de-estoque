@@ -1,51 +1,54 @@
-package refeicao;
+package model;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.List;
 
-public class Refeicao extends Estoque{
+public class Refeicao extends Restaurante {
 	
-	protected Date dataEntrega;
-	protected String horaEntrega;
+	private String nomeRefeicao;
+	private LocalDate dataEntrega;
+	private LocalTime horaEntrega;
+	private List<Prato> pratos;
 	
-	public Refeicao(int idObjeto) {
-		super(idObjeto);
-		this.idObjeto = idObjeto;
+	public Refeicao(int id, String nomeRefeicao, LocalDate dataEntrega, LocalTime horaEntrega, List<Prato> pratos) {
+		this.id = id;
+		this.nomeRefeicao = nomeRefeicao;
+		this.dataEntrega = dataEntrega;
+		this.horaEntrega = horaEntrega;
+		this.pratos = pratos;
 	}
 	
-	public Date getDataEntrega() {
+	public String getNomeRefeicao() {
+		return nomeRefeicao;
+	}
+	
+	public void setNomeRefeicao(String nomeRefeicao) {
+		this.nomeRefeicao = nomeRefeicao;
+	}
+	
+	public LocalDate getDataEntrega() {
 		return dataEntrega;
 	}
-
-	public void setDataEntrega(Date dataEntrega) {
+	
+	public void setDataEntrega(LocalDate dataEntrega) {
 		this.dataEntrega = dataEntrega;
 	}
-
-	public String getHoraEntrega() {
+	
+	public LocalTime getHoraEntrega() {
 		return horaEntrega;
 	}
-
-	public void setHoraEntrega(String horaEntrega) {
+	
+	public void setHoraEntrega(LocalTime horaEntrega) {
 		this.horaEntrega = horaEntrega;
 	}
-
 	
-	public void atualizaRefeicao(Date dataEntrega, String horaEntrega, int idObjeto) {
-		this.dataEntrega = dataEntrega;
-		this.horaEntrega = horaEntrega;
-		this.idObjeto = idObjeto;
-		// TODO criar uma String sql com a query de UPDATE
+	public List<Prato> getPratos() {
+		return pratos;
 	}
-
 	
-	public void excluiRefeicao(int idObjeto) {
-		// TODO criar uma String sql com a query de DELETE
-		
+	public void setPratos(List<Prato> pratos) {
+		this.pratos = pratos;
 	}
-
 	
-	public void criaRefeicao(Date dataEntrega, String horaEntrega, int idObjeto) {
-		// TODO criar uma String sql com a query de INSERT
-		
-	}
-
 }

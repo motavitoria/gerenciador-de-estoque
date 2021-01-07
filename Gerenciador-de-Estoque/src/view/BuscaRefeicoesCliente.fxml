@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="paneBuscaRefeicoesCliente" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BuscaRefeicoesClienteController">
+   <children>
+      <ToolBar layoutX="-1.0" prefHeight="40.0" prefWidth="335.0">
+         <items>
+            <Label text="BUSCA REFEIÇÕES" translateX="115.0" />
+         </items>
+      </ToolBar>
+      <TableView fx:id="tableBuscaRefeicoesCliente" layoutX="9.0" layoutY="58.0" prefHeight="451.0" prefWidth="318.0">
+        <columns>
+          <TableColumn fx:id="fieldRefeicoesCliente" prefWidth="317.0" text="Refeições" />
+        </columns>
+      </TableView>
+      <Button fx:id="botaoReservarRefeicoesCliente" defaultButton="true" layoutX="225.0" layoutY="528.0" mnemonicParsing="false" onAction="#reservaRefeicoesPratos" prefHeight="60.0" prefWidth="96.0" text="Reservar">
+         <font>
+            <Font name="Calibri Light" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="botaoVoltarMenuPrincipalBusca" defaultButton="true" layoutX="19.0" layoutY="528.0" mnemonicParsing="false" onAction="#voltaMenuPrincipalCliente" prefHeight="60.0" prefWidth="96.0" text="Voltar">
+         <font>
+            <Font name="Calibri Light" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

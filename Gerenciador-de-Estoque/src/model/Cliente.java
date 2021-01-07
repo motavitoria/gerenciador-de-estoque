@@ -1,22 +1,27 @@
-package perfil;
+package model;
+
+import java.util.List;
 
 public class Cliente extends Pessoa{
-		
-	private int carrinho;
 	
-	@Override
-	public Boolean validaTipoUsuario() {
-		if(this.tipoUsuario != "C") {
-			return false;
-		}
-		return true;
+	private int totalReservas;
+	private List<Reserva> reservas;
+	
+	
+	public int getTotalReservas() {
+		return totalReservas;
 	}
 	
-	public int getCarrinho() {
-		return carrinho;
+	public void setTotalReservas(int totalReservas) {
+		this.totalReservas = totalReservas;
 	}
-	public void setCarrinho(int carrinho) {
-		this.carrinho = carrinho;
+	
+	public List<Reserva> getReservas() {
+		return reservas;
+	}
+	
+	public void setReservas(List<Reserva> reservas) {
+		this.reservas = reservas;
 	}
 	
 }

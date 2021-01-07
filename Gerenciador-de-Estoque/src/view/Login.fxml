@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="paneLogin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+   <children>
+      <ToolBar layoutX="-8.0" prefHeight="45.0" prefWidth="343.0">
+         <items>
+            <Label text="LOGIN" translateX="140.0" />
+         </items>
+      </ToolBar>
+      <Label graphicTextGap="7.0" layoutX="68.0" layoutY="182.0" prefHeight="23.0" prefWidth="51.0" text="USER:" translateX="6.0" />
+      <TextField fx:id="fieldUser" layoutX="132.0" layoutY="181.0" promptText="Digite seu usuário" />
+      <Label layoutX="74.0" layoutY="233.0" text="SENHA:" translateX="-4.0" />
+      <PasswordField fx:id="fieldSenha" layoutX="132.0" layoutY="229.0" prefHeight="26.0" prefWidth="152.0" promptText="Digite sua senha" />
+      <Separator layoutX="44.0" layoutY="300.0" prefHeight="10.0" prefWidth="248.0" />
+      <Button fx:id="botaoEntrar" layoutX="119.0" layoutY="338.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="97.0" text="ENTRAR" />
+      <Label fx:id="lblErrors" alignment="CENTER" layoutX="8.0" layoutY="95.0" prefHeight="23.0" prefWidth="275.0" textFill="#ff6354">
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="paneEstoque" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EstoqueController">
+   <children>
+      <ToolBar layoutY="-6.0" prefHeight="40.0" prefWidth="335.0">
+         <items>
+            <Label text="ESTOQUE" translateX="140.0" />
+         </items>
+      </ToolBar>
+      <TableView fx:id="tableEstoque" layoutX="9.0" layoutY="58.0" prefHeight="451.0" prefWidth="318.0">
+        <columns>
+          <TableColumn fx:id="fieldNomeRefeicaoEstoque" prefWidth="112.0" text="Nome Refeição" />
+          <TableColumn fx:id="fieldIngredientesEstoque" prefWidth="97.0" text="Ingredientes" />
+            <TableColumn fx:id="fieldQuantidadeEstoque" prefWidth="108.0" text="Qtd Necessária" />
+        </columns>
+      </TableView>
+      <Button fx:id="botaoAtualizarEstoque" defaultButton="true" layoutX="121.0" layoutY="526.0" mnemonicParsing="false" onAction="#atualizaRefeicao" prefHeight="60.0" prefWidth="96.0" text="Atualizar">
+         <font>
+            <Font name="Calibri Light" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuPrincipalClienteController">
+   <children>
+      <ToolBar layoutX="-1.0" prefHeight="40.0" prefWidth="335.0">
+         <items>
+            <Label text="MENU PRINCIPAL" translateX="110.0" />
+         </items>
+      </ToolBar>
+      <Label layoutX="104.0" layoutY="96.0" text="Bem-vindo!" textFill="#8d0808">
+         <font>
+            <Font name="Candara Light Italic" size="27.0" />
+         </font>
+      </Label>
+      <Separator layoutX="69.0" layoutY="153.0" prefWidth="200.0" />
+      <Button fx:id="botaoReservasCliente" defaultButton="true" layoutX="95.0" layoutY="212.0" mnemonicParsing="false" onAction="#abreReservasCliente" prefHeight="57.0" prefWidth="149.0" text="RESERVAS" textFill="#790a0a">
+         <font>
+            <Font name="Calibri Light" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="botaoBuscaRefeicaoCliente" defaultButton="true" layoutX="83.0" layoutY="312.0" mnemonicParsing="false" onAction="#abreBuscaRefeicaoCliente" prefHeight="57.0" prefWidth="173.0" text="BUSCAR REFEIÇÕES" textFill="#790a0a">
+         <font>
+            <Font name="Calibri Light" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

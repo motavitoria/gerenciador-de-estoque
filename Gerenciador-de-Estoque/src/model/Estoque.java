@@ -1,22 +1,30 @@
-package refeicao;
+package model;
 
-import java.util.Date;
+import java.util.List;
 
-public abstract class Estoque {
+public class Estoque extends Restaurante {
 	
-	protected int idObjeto;
+	private List<Reserva> reservas;
+	private List<Ingrediente> ingredientesEstoque;
 	
-	public Estoque(int idObjeto) {
-		
-		this.idObjeto = idObjeto;
-		
+	public List<Reserva> getReservas() {
+		return reservas;
 	}
-	 
-	public int getIdObjeto() {
-		return idObjeto;
+	
+	public void setReservas(List<Reserva> reservas) {
+		this.reservas = reservas;
 	}
-	public void setIdObjeto(int idObjeto) {
-		this.idObjeto = idObjeto;
+	
+	public List<Ingrediente> getIngredientesEstoque() {
+		return ingredientesEstoque;
 	}
-
+	
+	public void setIngredientesEstoque(List<Ingrediente> ingredientesEstoque) {
+		this.ingredientesEstoque = ingredientesEstoque;
+	}
+	
+	public void calculaEstoque(List<Reserva> reservas, List<Ingrediente> ingredientesEstoque) {
+		// TODO Implementar calculo de estoque para atualização de dados em tela;
+	}
+	
 }

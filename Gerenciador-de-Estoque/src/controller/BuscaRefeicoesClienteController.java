@@ -24,7 +24,16 @@ public class BuscaRefeicoesClienteController {
     private TableView<?> tableBuscaRefeicoesCliente;
 
     @FXML
-    private TableColumn<?, ?> fieldRefeicoesCliente;
+    private TableColumn<?, ?> fieldNomeRefeicoesCliente;
+
+    @FXML
+    private TableColumn<?, ?> fieldPrecoRefeicoesCliente;
+
+    @FXML
+    private TableColumn<?, ?> fieldDataRefeicoesCliente;
+
+    @FXML
+    private TableColumn<?, ?> fieldHoraRefeicoesCliente;
 
     @FXML
     private Button botaoReservarRefeicoesCliente;
@@ -33,7 +42,7 @@ public class BuscaRefeicoesClienteController {
     private Button botaoVoltarMenuPrincipalBusca;
 
     @FXML
-    void reservaRefeicoesPratos(ActionEvent event) {
+    void reservaRefeicoes(ActionEvent event) {
 
     }
 
@@ -44,6 +53,6 @@ public class BuscaRefeicoesClienteController {
 
     @FXML
     void initialize() {
- 
+
     }
 }

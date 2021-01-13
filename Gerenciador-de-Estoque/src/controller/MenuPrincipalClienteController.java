@@ -19,7 +19,21 @@ public class MenuPrincipalClienteController {
 
     @FXML
     private Button botaoBuscaRefeicaoCliente;
+    
+    @FXML
+    void initialize() {
+    	
+    	MainPrograma.addOnChangeScreenListener(new MainPrograma.onChangeScreen() {
+			
+			@Override
+			public void onScreenChanged(String novaTela, Object objetoData) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 
+    }
+    
     @FXML
     void abreBuscaRefeicaoCliente(ActionEvent event) {
 
@@ -27,11 +41,6 @@ public class MenuPrincipalClienteController {
 
     @FXML
     void abreReservasCliente(ActionEvent event) {
-
-    }
-
-    @FXML
-    void initialize() {
 
     }
 }

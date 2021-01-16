@@ -32,7 +32,12 @@ public class CriaReservaController {
     void voltaReserva(ActionEvent event) {
 
     }
+    
+    @FXML
+    void criareserva(ActionEvent event) {
 
+    }
+    
     @FXML
     void initialize() {
  

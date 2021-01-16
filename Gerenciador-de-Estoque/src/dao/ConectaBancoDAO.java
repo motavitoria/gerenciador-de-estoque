@@ -21,7 +21,7 @@ public class ConectaBancoDAO extends ConexaoBancoDAO {
 	}
 	@Override
 	public Connection getConnection() {
-	   try {
+	   /*try {
 	        
 	        Class.forName(driver);
 	        DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
@@ -33,10 +33,10 @@ public class ConectaBancoDAO extends ConexaoBancoDAO {
 	    } catch (ClassNotFoundException ex) {
 	        Logger.getLogger(ConectaBancoDAO.class.getName()).log(Level.SEVERE, null, ex);
 	    }
-	
+            */
 	    return conn;
 	}
-
+        
 	@Override
 	public String getURL() {
 	    return "jdbc:mysql://" + this.servidor + ":" + this.porta + "/" + this.bd 

@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="paneCriaReserva" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CriaReservaController">
+<AnchorPane fx:id="paneCriaReserva" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CriaReservaController">
    <children>
       <ToolBar prefHeight="40.0" prefWidth="335.0">
          <items>
@@ -23,7 +23,7 @@
       <TextField fx:id="fieldQuantidadeReserva" layoutX="143.0" layoutY="202.0" promptText="Ex: 2" />
       <Separator layoutX="68.0" layoutY="139.0" prefWidth="200.0" />
       <Separator layoutX="68.0" layoutY="288.0" prefWidth="200.0" />
-      <Button fx:id="botaoCriaReserva" defaultButton="true" layoutX="37.0" layoutY="313.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="96.0" text="Reservar">
+      <Button fx:id="botaoCriaReserva" defaultButton="true" layoutX="37.0" layoutY="313.0" mnemonicParsing="false" onAction="#criareserva" prefHeight="60.0" prefWidth="96.0" text="Reservar">
          <font>
             <Font name="Calibri Light" size="18.0" />
          </font>

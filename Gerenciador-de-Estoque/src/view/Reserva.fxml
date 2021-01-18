@@ -15,20 +15,18 @@
             <Label text="RESERVA" translateX="140.0" />
          </items>
       </ToolBar>
-      <TableView fx:id="tableReserva" layoutX="30.0" layoutY="106.0" prefHeight="413.0" prefWidth="275.0">
+      <TableView fx:id="tableReserva" layoutX="11.0" layoutY="100.0" prefHeight="413.0" prefWidth="315.0">
         <columns>
-          <TableColumn fx:id="colunaNomeRefeicao" prefWidth="138.0" text="Nome Reserva" />
-          <TableColumn fx:id="colunaQuantidadeReserva" prefWidth="136.0" text="Quantidade" />
+          <TableColumn fx:id="colunaCodigoReserva" prefWidth="118.0" text="Código da Reserva" />
+            <TableColumn fx:id="colunaNomeRefeicaoReservada" prefWidth="120.0" text="Refeição Reservada" />
+          <TableColumn fx:id="colunaQuantidadeReserva" prefWidth="76.0" text="Quantidade" />
         </columns>
       </TableView>
-      <Button fx:id="botaoVoltarReserva" defaultButton="true" layoutX="14.0" layoutY="536.0" mnemonicParsing="false" onAction="#voltaMenuPrincipal" prefHeight="40.0" prefWidth="72.0" text="Voltar" />
-      <Button fx:id="botaoAtualizarReserva" defaultButton="true" layoutX="245.0" layoutY="536.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="72.0" text="Atualizar" />
-      <Button fx:id="botaoCriaReserva" defaultButton="true" layoutX="91.0" layoutY="536.0" mnemonicParsing="false" onAction="#abrirCriaReserva" prefHeight="40.0" prefWidth="72.0" text="Criar" />
+      <Button fx:id="botaoVoltarReserva" defaultButton="true" layoutX="129.0" layoutY="536.0" mnemonicParsing="false" onAction="#voltaMenuPrincipal" prefHeight="40.0" prefWidth="72.0" text="Voltar" />
       <Label layoutX="91.0" layoutY="65.0" text="Reservas agendadas" textFill="#2d0e94">
          <font>
             <Font name="Candara Light" size="18.0" />
          </font>
       </Label>
-      <Button fx:id="botaoExcluiReserva" defaultButton="true" layoutX="163.0" layoutY="536.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="72.0" text="Excluir" />
    </children>
 </AnchorPane>

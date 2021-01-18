@@ -1,30 +1,23 @@
 package controller;
 
-import java.util.Date;
-
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
-import model.Refeicao;
 
 public class RefeicaoController {
-	
+
+    @FXML
+    private ResourceBundle resources;
+
+    @FXML
+    private URL location;
+
     @FXML
     private AnchorPane paneRefeicao;
-
-    @FXML
-    private TableView<Refeicao> tableRefeicao;
-
-    @FXML
-    private TableColumn<Refeicao, String> colunaNomeRefeicao;
-
-    @FXML
-    private TableColumn<Refeicao, Date> colunaDataEntrega;
-
-    @FXML
-    private TableColumn<Refeicao, String> colunaHoraEntrega;
 
     @FXML
     private Button botaoRefeicaoVoltar;
@@ -37,5 +30,44 @@ public class RefeicaoController {
 
     @FXML
     private Button botaoRefeicaoExcluir;
-    
+
+    @FXML
+    private TableColumn<?, ?> colunaNomeRefeicao;
+
+    @FXML
+    private TableColumn<?, ?> colunaTipoRefeicao;
+
+    @FXML
+    private TableColumn<?, ?> colunaPrecoRefeicao;
+
+    @FXML
+    private TableColumn<?, ?> colunaDataEntrega;
+
+    @FXML
+    private TableColumn<?, ?> colunaHoraEntrega;
+
+    @FXML
+    void abrirAtualizaCriaRefeicao(ActionEvent event) {
+
+    }
+
+    @FXML
+    void abrirCriaRefeicao(ActionEvent event) {
+
+    }
+
+    @FXML
+    void abrirMenuPrincipal(ActionEvent event) {
+
+    }
+
+    @FXML
+    void excluirRefeicao(ActionEvent event) {
+
+    }
+
+    @FXML
+    void initialize() {
+
+    }
 }

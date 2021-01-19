@@ -1,5 +1,6 @@
 package controller;
 
+import dao.ReservaDAO;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -9,7 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 public class CriaReservaController {
-
+    ReservaDAO rDAO;
     @FXML
     private ResourceBundle resources;
 
@@ -30,12 +31,12 @@ public class CriaReservaController {
 
     @FXML
     void voltaReserva(ActionEvent event) {
-
+        
     }
     
     @FXML
     void criareserva(ActionEvent event) {
-
+        rDAO.cria();
     }
     
     @FXML

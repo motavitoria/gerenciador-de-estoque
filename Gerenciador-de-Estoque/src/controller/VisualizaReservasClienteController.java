@@ -1,5 +1,7 @@
 package controller;
 
+import dao.ClienteDAO;
+import dao.ReservaDAO;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -10,11 +12,13 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
 import model.Cliente;
+import model.Refeicao;
 import model.Reserva;
 
 public class VisualizaReservasClienteController {
     Cliente c;
-    
+    ClienteDAO cDAO;
+    ReservaDAO rDAO;
     @FXML
     private ResourceBundle resources;
 
@@ -55,18 +59,14 @@ public class VisualizaReservasClienteController {
               }
                 */
               fieldIdReserva = (TableColumn<?, ?>) c.getReservas();
-              /*
               List <Refeicao> ref = null;
               for(int i  =0; i < reservas.size(); i++){
                   ref.add((Refeicao) reservas.get(i).getRefeicoesReservadas());
               }
-              fieldReservaRefeicao = (TableColumn<?, ?>) c.getReservas();
-              */
+              //fieldReservaRefeicao = (TableColumn<?, ?>) ref.getNomeRef(); descobrir como pegar esse nome
+              
           }
         });
         
-        //Pega lista de reservas do cliente e manda para o table view
-        // confirmar se usar Cliente como objetoData é a forma como ela pensou em fazer as coisas
-        //Pego lista de reservas do cliente e separo em um for colocando o ID em uma coluna e ????
     }
 }

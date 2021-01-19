@@ -33,7 +33,7 @@ public class Estoque {
 	}
 	
 	public void calculaEstoque(List<Reserva> reservas, List<Ingrediente> ingredientesEstoque) {
-		// TODO Implementar calculo de estoque para atualização de dados em tela;
+		/* TODO Implementar calculo de estoque para atualizaï¿½ï¿½o de dados em tela;*/
 	}
 	
 }

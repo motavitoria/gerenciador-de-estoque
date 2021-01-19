@@ -27,7 +27,7 @@ public class MainPrograma extends Application {
 	private static Scene buscaRefeicoesScene;
 	private static Scene criaReservaScene;
 	
-	
+	//Erro na passagem de Location // todos os Parent fxml... tão dando erro
 	@Override
 	public void start(Stage primaryStage) throws IOException {
 		
@@ -74,7 +74,7 @@ public class MainPrograma extends Application {
 		Parent fxmlCriaReserva = FXMLLoader.load(getClass().getResource("../view/CriaReserva.fxml"));
 		criaReservaScene = new Scene(fxmlCriaReserva);
 		
-		primaryStage.setScene(loginScene);
+		primaryStage.setScene(menuPrincipalClienteScene);
 		primaryStage.show();
 		
 	}

@@ -72,7 +72,7 @@ public class BuscaRefeicoesClienteController{
         });
         
         //Pega lista de refeições e manda para o table view
-        //Não entendi mto bem o que essa tela mostra
+        //Mostra todas as refeições do sistema
     }
 
 

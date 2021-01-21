@@ -13,6 +13,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import model.Cliente;
 import controller.MainPrograma;
+import java.util.Date;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.cell.PropertyValueFactory;
+import model.Refeicao;
 
 public class BuscaRefeicoesClienteController{
     private static Scene menuPrincipalCliente;
@@ -20,6 +25,7 @@ public class BuscaRefeicoesClienteController{
     private static Stage stage;
     
     Cliente c;
+    private ObservableList<Refeicao> listadeRefeicoes;
     
     @FXML
     private ResourceBundle resources;
@@ -31,26 +37,56 @@ public class BuscaRefeicoesClienteController{
     private AnchorPane paneBuscaRefeicoesCliente;
 
     @FXML
-    private TableView<?> tableBuscaRefeicoesCliente;
+    private TableView<Refeicao> tableBuscaRefeicoesCliente;
 
     @FXML
-    private TableColumn<?, ?> fieldNomeRefeicoesCliente;
+    private TableColumn<Refeicao, String> fieldNomeRefeicoesCliente;
 
     @FXML
-    private TableColumn<?, ?> fieldPrecoRefeicoesCliente;
+    private TableColumn<Refeicao, Double> fieldPrecoRefeicoesCliente;
 
     @FXML
-    private TableColumn<?, ?> fieldDataRefeicoesCliente;
+    private TableColumn<Refeicao,Date> fieldDataRefeicoesCliente;
 
     @FXML
-    private TableColumn<?, ?> fieldHoraRefeicoesCliente;
+    private TableColumn<Refeicao, String> fieldHoraRefeicoesCliente;
 
     @FXML
     private Button botaoReservarRefeicoesCliente;
 
     @FXML
     private Button botaoVoltarMenuPrincipalBusca;
+    
+    private ObservableList<Refeicao> populaListaRefeicoes(){
+    	
+    	listadeRefeicoes = FXCollections.observableArrayList();
+    	fieldNomeRefeicoesCliente.setCellValueFactory(new PropertyValueFactory<Refeicao, String>("Nome Refeição"));
+    	fieldPrecoRefeicoesCliente.setCellValueFactory(new PropertyValueFactory<Refeicao, Double>("Preço"));        
+    	fieldDataRefeicoesCliente.setCellValueFactory(new PropertyValueFactory<Refeicao, Date>("Data"));
+    	fieldHoraRefeicoesCliente.setCellValueFactory(new PropertyValueFactory<Refeicao, String>("Hora"));
+        int idTeste = 1;
+    	c.setIdUsuario(idTeste);
+    	/*
+        try {
+            Connection con = (Connection) ConstroiConexao.getConnection(); // O QUE É O R?
+            String sql = String.format("SELECT r.nome, r.data_entrega, r.hora_entrega, r.id_refeicao FROM refeicao r, login u WHERE u.id_usuario='%s';", v.getIdUsuario());
+            Statement select = (Statement) con.createStatement();
+            ResultSet rset = select.executeQuery(sql);
 
+            while(rset.next()) {
+            	dataListaRefeicao.add(new Refeicao(rset.getString(1), rset.getDate(2), rset.getString(3), rset.getInt(4)));
+            }
+
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+*/
+        return listadeRefeicoes;
+    }
+ 
+        
     @FXML
     void reservaRefeicoes(ActionEvent event) {
         MainPrograma.mudaTela("criaReserva",c);
@@ -70,9 +106,15 @@ public class BuscaRefeicoesClienteController{
               c = (Cliente) objetoData;
           }
         });
-        
+        exibeRefeicoes();
         //Pega lista de refeições e manda para o table view
         //Mostra todas as refeições do sistema
+    }
+    
+    public void exibeRefeicoes() {
+    	
+    	tableBuscaRefeicoesCliente.setItems(populaListaRefeicoes());
+    	
     }
 
 

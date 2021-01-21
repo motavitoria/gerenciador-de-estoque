@@ -30,8 +30,9 @@ public class ClienteDAO implements CadastroDAO {
 		
 	}
         
-        public Cliente getCliente(){
-            Cliente cliente = null; 
+        public Cliente getCliente(/*parametro para o select(nome)*/){
+            
+            Cliente cliente = null; //select where nome = nome;
             return cliente;
         }
         

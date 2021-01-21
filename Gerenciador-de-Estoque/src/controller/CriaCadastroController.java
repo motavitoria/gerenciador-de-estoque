@@ -1,6 +1,7 @@
 package controller;
 
 import dao.ClienteDAO;
+import dao.VendedorDAO;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +15,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import model.Cliente;
+import model.Vendedor;
 
 public class CriaCadastroController {
 
@@ -60,12 +63,23 @@ public class CriaCadastroController {
     
     @FXML
     void abreMenuPrincipal(ActionEvent event) {
-        //dividir entre menuvendedor e o menucliente
         String nomeUsuario = fieldNomeUsuario.getText();
         String senhaUsuario = fieldSenhaUsuario.getText();
         String CPFUsuario = fieldCpfUsuario.getText();
-        String tipoUsario = comboTipoUsuario.getSelectionModel().getSelectedItem();
-        ClienteDAO cDAO = new ClienteDAO();
-        cDAO.criaUsuario(tipoUsario,nomeUsuario,senhaUsuario,CPFUsuario);
+        String tipoUsuario = comboTipoUsuario.getSelectionModel().getSelectedItem();
+        if(tipoUsuario == "C"){
+            ClienteDAO cDAO = new ClienteDAO();
+            cDAO.criaUsuario(tipoUsuario,nomeUsuario,senhaUsuario,CPFUsuario);
+            Cliente c = cDAO.getCliente();
+            MainPrograma.mudaTela("menuPrincipalCliente",c);
+        }else{
+            VendedorDAO vDAO = new VendedorDAO();
+            vDAO.criaUsuario(tipoUsuario,nomeUsuario,senhaUsuario,CPFUsuario);
+            Vendedor v = vDAO.getVendedor();
+            MainPrograma.mudaTela("menuPrincipalVendedor",v);
+        }
+        
+        
+        
     }
 }

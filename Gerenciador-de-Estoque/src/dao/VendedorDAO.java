@@ -1,5 +1,7 @@
 package dao;
 
+import model.Vendedor;
+
 public class VendedorDAO implements CadastroDAO {
 
 	@Override
@@ -25,5 +27,11 @@ public class VendedorDAO implements CadastroDAO {
                 return true;
             }
     }
+    
+    public Vendedor getVendedor(/*parametro para o select(nome)*/){
+            
+            Vendedor vendedor = null; //select where nome = nome;
+            return vendedor;
+        }
 }
 

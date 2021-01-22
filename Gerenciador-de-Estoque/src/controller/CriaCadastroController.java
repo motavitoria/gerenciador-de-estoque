@@ -20,6 +20,8 @@ import model.Vendedor;
 
 public class CriaCadastroController {
 
+    Cliente c;
+    
     @FXML
     private ResourceBundle resources;
 
@@ -50,6 +52,13 @@ public class CriaCadastroController {
     
     @FXML
     void initialize() {
+        MainPrograma.addOnChangeScreenListener(new MainPrograma.onChangeScreen(){
+          @Override
+          public void onScreenChanged(String newscreen, Object objetoData){
+              System.out.println("Nova tela: " + newscreen + " " + objetoData);
+              c = (Cliente) objetoData;
+          }
+        });
         carregarTipoUsuario();
         
     }
@@ -70,7 +79,6 @@ public class CriaCadastroController {
         if(tipoUsuario == "C"){
             ClienteDAO cDAO = new ClienteDAO();
             cDAO.criaUsuario(tipoUsuario,nomeUsuario,senhaUsuario,CPFUsuario);
-            Cliente c = cDAO.getCliente();
             MainPrograma.mudaTela("menuPrincipalCliente",c);
         }else{
             VendedorDAO vDAO = new VendedorDAO();

@@ -29,13 +29,13 @@ public class VisualizaReservasClienteController {
     private AnchorPane paneVisualizaReservasCliente;
 
     @FXML
-    private TableView<?> tableVisualizaReservas;
+    private TableView<Reserva> tableVisualizaReservas;
 
     @FXML
-    private TableColumn<?, ?> fieldIdReserva;
+    private TableColumn<Reserva, Integer> fieldIdReserva;
 
     @FXML
-    private TableColumn<?, ?> fieldReservaRefeicao;
+    private TableColumn<Reserva, String> fieldReservaRefeicao;
 
     @FXML
     private Button botaoVoltaMenuPrincipalClienteReservas;
@@ -52,13 +52,14 @@ public class VisualizaReservasClienteController {
           public void onScreenChanged(String newscreen, Object objetoData){
               System.out.println("Nova tela: " + newscreen + " " + objetoData);
               c = (Cliente) objetoData;
-              List<Reserva> reservas = c.getReservas();
+              List<Reserva> reservas = c.getReservas(c.getIdUsuario());
               /*
               for(int i  =0; i < reservas.size(); i++){
                   reservas.get(i).getIdReserva();
               }
                 */
-              fieldIdReserva = (TableColumn<?, ?>) c.getReservas();
+              fieldIdReserva = (TableColumn<Reserva, Integer>) c.getReservas(c.getIdUsuario());
+              
               List <Refeicao> ref = null;
               for(int i  =0; i < reservas.size(); i++){
                   ref.add((Refeicao) reservas.get(i).getRefeicoesReservadas());

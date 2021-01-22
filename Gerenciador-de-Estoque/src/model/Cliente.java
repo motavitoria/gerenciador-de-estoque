@@ -16,12 +16,12 @@ public class Cliente extends Pessoa{
 		this.totalReservas = totalReservas;
 	}
 	
-	public List<Reserva> getReservas() {
+	public List<Reserva> getReservas(int idUsuario) {
 		return reservas;
 	}
 	
-	public void setReservas(List<Reserva> reservas) {
-		this.reservas = reservas;
+	public void setReservas( ) {
+            
 	}
 	
 }

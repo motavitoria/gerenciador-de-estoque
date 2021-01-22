@@ -13,18 +13,20 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import model.Cliente;
 import controller.MainPrograma;
+import dao.ClienteDAO;
+import dao.RefeicaoDAO;
 import java.util.Date;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.Refeicao;
 
-public class BuscaRefeicoesClienteController{
+public class BuscaRefeicoesClienteController{ // O QUE ESSE CONTROLER FAZ? RETORNA AS REFEIÇÔES QUE O CLIENTE COMEU
     private static Scene menuPrincipalCliente;
     private static Scene refeicaoCliente;
     private static Stage stage;
-    
     Cliente c;
+    RefeicaoDAO refDAO = new RefeicaoDAO();
     private ObservableList<Refeicao> listadeRefeicoes;
     
     @FXML
@@ -64,25 +66,8 @@ public class BuscaRefeicoesClienteController{
     	fieldPrecoRefeicoesCliente.setCellValueFactory(new PropertyValueFactory<Refeicao, Double>("Preço"));        
     	fieldDataRefeicoesCliente.setCellValueFactory(new PropertyValueFactory<Refeicao, Date>("Data"));
     	fieldHoraRefeicoesCliente.setCellValueFactory(new PropertyValueFactory<Refeicao, String>("Hora"));
-        int idTeste = 1;
-    	c.setIdUsuario(idTeste);
-    	/*
-        try {
-            Connection con = (Connection) ConstroiConexao.getConnection(); // O QUE É O R?
-            String sql = String.format("SELECT r.nome, r.data_entrega, r.hora_entrega, r.id_refeicao FROM refeicao r, login u WHERE u.id_usuario='%s';", v.getIdUsuario());
-            Statement select = (Statement) con.createStatement();
-            ResultSet rset = select.executeQuery(sql);
-
-            while(rset.next()) {
-            	dataListaRefeicao.add(new Refeicao(rset.getString(1), rset.getDate(2), rset.getString(3), rset.getInt(4)));
-            }
-
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
         
-*/
+        refDAO.getRefeicoes(1);    	
         return listadeRefeicoes;
     }
  

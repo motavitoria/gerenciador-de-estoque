@@ -8,9 +8,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import model.Cliente;
 
 public class CriaReservaController {
     ReservaDAO rDAO;
+    Cliente c;
     @FXML
     private ResourceBundle resources;
 

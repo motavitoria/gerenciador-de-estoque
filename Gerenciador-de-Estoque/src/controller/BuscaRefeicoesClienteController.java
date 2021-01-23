@@ -16,6 +16,7 @@ import controller.MainPrograma;
 import dao.ClienteDAO;
 import dao.RefeicaoDAO;
 import java.util.Date;
+import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -58,19 +59,6 @@ public class BuscaRefeicoesClienteController{ // O QUE ESSE CONTROLER FAZ? RETOR
 
     @FXML
     private Button botaoVoltarMenuPrincipalBusca;
-    
-    private ObservableList<Refeicao> populaListaRefeicoes(){
-    	
-    	listadeRefeicoes = FXCollections.observableArrayList();
-    	fieldNomeRefeicoesCliente.setCellValueFactory(new PropertyValueFactory<Refeicao, String>("Nome Refeição"));
-    	fieldPrecoRefeicoesCliente.setCellValueFactory(new PropertyValueFactory<Refeicao, Double>("Preço"));        
-    	fieldDataRefeicoesCliente.setCellValueFactory(new PropertyValueFactory<Refeicao, Date>("Data"));
-    	fieldHoraRefeicoesCliente.setCellValueFactory(new PropertyValueFactory<Refeicao, String>("Hora"));
-        
-        refDAO.getRefeicoes(1);    	
-        return listadeRefeicoes;
-    }
- 
         
     @FXML
     void reservaRefeicoes(ActionEvent event) {
@@ -92,13 +80,23 @@ public class BuscaRefeicoesClienteController{ // O QUE ESSE CONTROLER FAZ? RETOR
           }
         });
         exibeRefeicoes();
-        //Pega lista de refeições e manda para o table view
-        //Mostra todas as refeições do sistema
     }
     
     public void exibeRefeicoes() {
-    	
-    	tableBuscaRefeicoesCliente.setItems(populaListaRefeicoes());
+    	fieldNomeRefeicoesCliente.setCellValueFactory(new PropertyValueFactory<Refeicao, String>("Nome Refeição"));
+    	fieldPrecoRefeicoesCliente.setCellValueFactory(new PropertyValueFactory<Refeicao, Double>("Preço"));        
+    	fieldDataRefeicoesCliente.setCellValueFactory(new PropertyValueFactory<Refeicao, Date>("Data"));
+    	fieldHoraRefeicoesCliente.setCellValueFactory(new PropertyValueFactory<Refeicao, String>("Hora"));
+
+        ObservableList<String> obsNome = FXCollections.observableArrayList(refDAO.getNomeRefeicoes());
+        ObservableList<Double> obsPreco= FXCollections.observableArrayList(refDAO.getPrecoRefeicoes());
+        ObservableList<Date> obsData = FXCollections.observableArrayList(refDAO.getDataRefeicoes());
+        ObservableList<String> obsHora = FXCollections.observableArrayList(refDAO.getHoraRefeicoes());
+        
+        fieldNomeRefeicoesCliente = (TableColumn<Refeicao, String>) obsNome;
+        fieldPrecoRefeicoesCliente = (TableColumn<Refeicao, Double>) obsPreco;
+        fieldDataRefeicoesCliente = (TableColumn<Refeicao, Date>) obsData;
+        fieldHoraRefeicoesCliente = (TableColumn<Refeicao, String>) obsHora;
     	
     }
 

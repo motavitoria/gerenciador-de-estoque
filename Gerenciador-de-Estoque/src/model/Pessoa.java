@@ -4,7 +4,7 @@ public abstract class Pessoa {
 	
 	private int idUsuario;
 	private String nomeUsuario;
-	private int senhaUsuario;
+	private String senhaUsuario; // MUDEI VER DE INT PARA STRING CONFIRMAR SE È DE BOA - ME BASEEI NO BD
 	private String tipoUsuario;
 	private String cpfUsuario;
 	
@@ -24,11 +24,11 @@ public abstract class Pessoa {
 		this.nomeUsuario = nomeUsuario;
 	}
 	
-	public int getSenhaUsuario() {
+	public String getSenhaUsuario() {
 		return senhaUsuario;
 	}
 	
-	public void setSenhaUsuario(int senhaUsuario) {
+	public void setSenhaUsuario(String senhaUsuario) {
 		this.senhaUsuario = senhaUsuario;
 	}
 	
@@ -44,7 +44,7 @@ public abstract class Pessoa {
 		return cpfUsuario;
 	}
 	
-	public void setCpfUsuario(String cpfUsuario) {
+	public void setCPFUsuario(String cpfUsuario) {
 		this.cpfUsuario = cpfUsuario;
 	}
 	

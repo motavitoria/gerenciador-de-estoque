@@ -1,15 +1,19 @@
 package controller;
 
 import dao.ClienteDAO;
+import dao.RefeicaoDAO;
 import dao.ReservaDAO;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import model.Cliente;
 import model.Refeicao;
@@ -17,8 +21,8 @@ import model.Reserva;
 
 public class VisualizaReservasClienteController {
     Cliente c;
-    ClienteDAO cDAO;
-    ReservaDAO rDAO;
+    ReservaDAO resDAO;
+    RefeicaoDAO refDAO;
     @FXML
     private ResourceBundle resources;
 
@@ -52,22 +56,23 @@ public class VisualizaReservasClienteController {
           public void onScreenChanged(String newscreen, Object objetoData){
               System.out.println("Nova tela: " + newscreen + " " + objetoData);
               c = (Cliente) objetoData;
-              List<Reserva> reservas = c.getReservas(c.getIdUsuario());
-              /*
-              for(int i  =0; i < reservas.size(); i++){
-                  reservas.get(i).getIdReserva();
-              }
-                */
-              fieldIdReserva = (TableColumn<Reserva, Integer>) c.getReservas(c.getIdUsuario());
-              
-              List <Refeicao> ref = null;
-              for(int i  =0; i < reservas.size(); i++){
-                  ref.add((Refeicao) reservas.get(i).getRefeicoesReservadas());
-              }
-              //fieldReservaRefeicao = (TableColumn<?, ?>) ref.getNomeRef(); descobrir como pegar esse nome
-              
           }
         });
         
+    }
+    
+    public void exibeRefeicoes() {
+    	fieldIdReserva.setCellValueFactory(new PropertyValueFactory<Reserva, Integer>("Código da Reserva"));
+    	fieldReservaRefeicao.setCellValueFactory(new PropertyValueFactory<Reserva, String>("Refeição Reservada"));        
+
+
+        ObservableList<Integer> idReserva = FXCollections.observableArrayList(resDAO.getIdReserva(c.getNomeUsuario(),c.getSenhaUsuario()));
+        ObservableList<String> nomeRefeicao = FXCollections.observableArrayList(refDAO.getNomeRefeicoes(c.getIdUsuario()));
+
+        
+        fieldIdReserva = (TableColumn<Reserva, Integer>) idReserva;
+        fieldReservaRefeicao = (TableColumn<Reserva, String>) nomeRefeicao;
+
+    	
     }
 }

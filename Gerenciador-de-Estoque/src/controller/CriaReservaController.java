@@ -33,16 +33,23 @@ public class CriaReservaController {
 
     @FXML
     void voltaReserva(ActionEvent event) {
-        
+      MainPrograma.mudaTela("buscaRefeicaoCliente",c);        
     }
     
     @FXML
     void criareserva(ActionEvent event) {
+        //TO DO Criar Reserva da linha selecionada
         rDAO.cria();
     }
     
     @FXML
     void initialize() {
- 
+        MainPrograma.addOnChangeScreenListener(new MainPrograma.onChangeScreen(){
+          @Override
+          public void onScreenChanged(String newscreen, Object objetoData){
+              System.out.println("Nova tela: " + newscreen + " " + objetoData);
+              c = (Cliente) objetoData;
+          }
+        });
     }
 }

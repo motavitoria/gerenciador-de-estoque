@@ -76,18 +76,19 @@ public class CriaCadastroController {
         String senhaUsuario = fieldSenhaUsuario.getText();
         String CPFUsuario = fieldCpfUsuario.getText();
         String tipoUsuario = comboTipoUsuario.getSelectionModel().getSelectedItem();
-        if(tipoUsuario == "C"){
+        c = new Cliente();
+        if("C".equals(tipoUsuario)){
+            c.setNomeUsuario(nomeUsuario);
+
             ClienteDAO cDAO = new ClienteDAO();
             cDAO.criaUsuario(tipoUsuario,nomeUsuario,senhaUsuario,CPFUsuario);
+            Cliente c = cDAO.getCliente(cDAO.getIdCliente(nomeUsuario,senhaUsuario));
             MainPrograma.mudaTela("menuPrincipalCliente",c);
         }else{
             VendedorDAO vDAO = new VendedorDAO();
             vDAO.criaUsuario(tipoUsuario,nomeUsuario,senhaUsuario,CPFUsuario);
-            Vendedor v = vDAO.getVendedor();
+            Vendedor v = vDAO.getVendedor(vDAO.getIdVendedor(nomeUsuario,senhaUsuario));
             MainPrograma.mudaTela("menuPrincipalVendedor",v);
         }
-        
-        
-        
     }
 }

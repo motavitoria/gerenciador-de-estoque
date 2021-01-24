@@ -12,17 +12,30 @@ import model.Cliente;
 public class ClienteDAO implements CadastroDAO {
 
 	@Override
-	public void criaUsuario(String tipousuario,String nomeUsuario, String senhaUsuario, String CPFUsuario) {
-          Connection connection = (Connection) FabricaConexaoDAO.getConnection();
-          
-          verificaTipo(tipousuario);
+	public void criaUsuario(String tipoUsuario,String nomeUsuario, String senhaUsuario, String CPFUsuario) {
+          if(verificaTipo(tipoUsuario)){
+            /*
+            try{
+                 Connection connection = (Connection) FabricaConexaoDAO.getConnection();      
+                 String consulta = String.format("INSERT IN %S,%s,%s,%s",tipousuario,nomeUsuario,senhaUsuario,CPFUsuario);
+                Statement statement = (Statement) connection.createStatement();
+                ResultSet resultSet = statement.executeQuery(consulta);
+                
+                while(resultSet.next()){
+                    //
+                }
+            }catch(SQLException ex){
+                String s = "";
+            }
+            */ //TO DO  CONFIGURAR DIREITO ISSO AQUI
+          }
           
 	}
 
 	@Override
 	public boolean verificaTipo(String tipo) {  //MUDEI DE VOID PARA BOOLEAN
             if(tipoValido(tipo) == true){
-                if(tipo == "C"){
+                if("C".equals(tipo)){
                     return true;
                 }
             }

@@ -22,7 +22,7 @@ import javafx.collections.ObservableList;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.Refeicao;
 
-public class BuscaRefeicoesClienteController{ // O QUE ESSE CONTROLER FAZ? RETORNA AS REFEIÇÔES QUE O CLIENTE COMEU
+public class BuscaRefeicoesClienteController{ 
     private static Scene menuPrincipalCliente;
     private static Scene refeicaoCliente;
     private static Stage stage;
@@ -62,6 +62,7 @@ public class BuscaRefeicoesClienteController{ // O QUE ESSE CONTROLER FAZ? RETOR
         
     @FXML
     void reservaRefeicoes(ActionEvent event) {
+        //EM RELACAO A ESSA PARTE VOU PRECISAR ARRANJAR UM JEITO DE PASSAR A INFORMAÇÂO DA LINHA SELECIONADA
         MainPrograma.mudaTela("criaReserva",c);
     }
 

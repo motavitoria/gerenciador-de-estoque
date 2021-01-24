@@ -8,7 +8,7 @@ import javafx.scene.control.Button;
 import model.Cliente;
 
 public class MenuPrincipalClienteController {
-    Cliente c /*= ClienteDAO.busca(login)*/;
+    Cliente c;
     
     @FXML
     private ResourceBundle resources;

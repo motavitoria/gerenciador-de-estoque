@@ -16,16 +16,17 @@ public class ConectaBancoDAO extends ConexaoBancoDAO {
 		this.servidor = "localhost";
 		this.bd = "gerenciador_de_estoque";
 		this.usuario = "root";
-		this.senha = "12345";
+		this.senha = "ElefanteComBanana29";
 
 	}
+        
 	@Override
 	public Connection getConnection() {
-	   /*try {
+	   try {
 	        
 	        Class.forName(driver);
 	        DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
-	        conn = DriverManager.getConnection(getURL(), usuario, senha);
+	        Connection conn = DriverManager.getConnection(getURL(), usuario, senha);
 	
 	    } catch (SQLException ex) {
 	        Logger.getLogger(ConectaBancoDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -33,7 +34,6 @@ public class ConectaBancoDAO extends ConexaoBancoDAO {
 	    } catch (ClassNotFoundException ex) {
 	        Logger.getLogger(ConectaBancoDAO.class.getName()).log(Level.SEVERE, null, ex);
 	    }
-            */
 	    return conn;
 	}
         

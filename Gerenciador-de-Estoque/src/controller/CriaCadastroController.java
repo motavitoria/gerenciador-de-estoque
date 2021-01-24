@@ -44,11 +44,7 @@ public class CriaCadastroController {
     private ComboBox<String> comboTipoUsuario;
 
     @FXML
-    private Button botaoConfirmarCadastro;
-
-    private List<String> tiposUs = new ArrayList<>();
-    
-    private ObservableList<String> obsTiposUs;
+    private Button botaoConfirmarCadastro; 
     
     @FXML
     void initialize() {
@@ -64,6 +60,8 @@ public class CriaCadastroController {
     }
     
     public void carregarTipoUsuario(){
+        ObservableList<String> obsTiposUs;
+        List<String> tiposUs = new ArrayList<>();
         tiposUs.add("V");
         tiposUs.add("C");
         obsTiposUs = FXCollections.observableArrayList(tiposUs);

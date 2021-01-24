@@ -19,7 +19,7 @@
             <Font name="Calibri Light" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="botaoReservas" defaultButton="true" layoutX="94.0" layoutY="300.0" mnemonicParsing="false" onAction="#vaiParaReserva" prefHeight="57.0" prefWidth="149.0" text="RESERVAS" textFill="#044451">
+      <Button fx:id="botaoReservas" defaultButton="true" layoutX="94.0" layoutY="300.0" mnemonicParsing="false" onAction="#vaiParaReservas" prefHeight="57.0" prefWidth="149.0" text="RESERVAS" textFill="#044451">
          <font>
             <Font name="Calibri Light" size="18.0" />
          </font>

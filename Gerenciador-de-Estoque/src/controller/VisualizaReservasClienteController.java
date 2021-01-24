@@ -1,10 +1,8 @@
 package controller;
 
-import dao.ClienteDAO;
 import dao.RefeicaoDAO;
 import dao.ReservaDAO;
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,7 +14,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import model.Cliente;
-import model.Refeicao;
 import model.Reserva;
 
 public class VisualizaReservasClienteController {
@@ -58,7 +55,7 @@ public class VisualizaReservasClienteController {
               c = (Cliente) objetoData;
           }
         });
-        
+        exibeRefeicoes();
     }
     
     public void exibeRefeicoes() {
@@ -67,7 +64,8 @@ public class VisualizaReservasClienteController {
 
 
         ObservableList<Integer> idReserva = FXCollections.observableArrayList(resDAO.getIdReserva(c.getNomeUsuario(),c.getSenhaUsuario()));
-        ObservableList<String> nomeRefeicao = FXCollections.observableArrayList(refDAO.getNomeRefeicoes(c.getIdUsuario()));
+        ObservableList<String> nomeRefeicao = FXCollections.observableArrayList(refDAO.getNomeRefeicoes(c.getIdUsuario()));// VOU PRECISAR DE UMA HELP PARA VER COMO FAÇO ESSA CONSULTA E O QUE VOU PRECISAR
+
 
         
         fieldIdReserva = (TableColumn<Reserva, Integer>) idReserva;

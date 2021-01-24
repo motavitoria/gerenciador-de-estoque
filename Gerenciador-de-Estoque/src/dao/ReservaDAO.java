@@ -11,8 +11,8 @@ import java.sql.Statement;
 import java.util.List;
 public class ReservaDAO implements RestauranteDAO  {
 
-	@Override
-	public void cria() {
+	
+	public void cria(String nomerefeicao,Integer idUsuario,Integer quantidade) {
             
             /*
             try{
@@ -27,12 +27,19 @@ public class ReservaDAO implements RestauranteDAO  {
 
 	@Override
 	public void atualiza() {
-		//Atualizo o que?
+		//Atualizor o que?
 	}
 
-	@Override
-	public void exclui() {
-		
+	public void exclui(Integer idReserva) {
+		/*
+            try{
+                Connection con = (Connection) ConstroiConexao.getConnection();
+                String sql = String.format(""DELETE res FROM reserva res WHERE res.id_reserva == "%d",idReserva);
+                con.executeUpdate(sql);
+                }catch (SQLException ex){
+                    
+                }
+            */
 	}
 
 	@Override
@@ -73,5 +80,15 @@ public class ReservaDAO implements RestauranteDAO  {
             }
             return id_res;
         }
+
+    @Override
+    public void cria() {
+        
+    }
+
+    @Override
+    public void exclui() {
+     
+    }
 
 }

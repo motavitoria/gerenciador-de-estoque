@@ -9,7 +9,12 @@ import java.util.List;
 import model.Refeicao;
 
 public class RefeicaoDAO implements RestauranteDAO {
-
+        private Refeicao refeicao;
+	private Connection connection;
+	private ResultSet resultSet;
+	private String consulta;
+	private Statement statement;
+        
 	@Override
 	public void cria() {
 		//TODO INSERÇÂO NO BD
@@ -30,27 +35,33 @@ public class RefeicaoDAO implements RestauranteDAO {
 		
 	}
         
-        public List<Refeicao> getRefeicoes(/*idusuario*/) {
+        public List<Refeicao> buscaListaRefeicoes() {
             //TA ESTRANHO ISSO AI ACHO QUE NÂO PRECISA DO idUSUARIO
            
             List<Refeicao> refeicoes = null; 
-            
+            int idUsuario = 4;
             //refeicoes = String.format("SELECT login.cpf FROM login WHERE login.id_usuario = '%s'");
             try{
-                 Connection connection = (Connection) FabricaConexaoDAO.getConnection();
-                 /*
-                String consulta = String.format("SELECT ref.nome, \r\n" + "ref.preco,\r\n" 
-                        + "ref.preco,\r\n" + "ref.data_enmtrega" + "ref.hora_entrega,\r\n" + "FROM refeicao ref, \r\n" + "login usu,\r\n" + "WHERE ref.id_usuario = '%s' AND\r\n" +
-                        "ref.id_usuario = usu.id_usuario;",idUsuario);
-
-                */       
-                 String consulta = String.format("SELECT ref.nome, \r\n" + "  ref.preco,\r\n" 
-                        + "  ref.preco,\r\n" + "  ref.data_enmtrega" + "  ref.hora_entrega,\r\n" + "  FROM refeicao ref");
-                Statement statement = (Statement) connection.createStatement();
+                 connection = (Connection) FabricaConexaoDAO.getConnection();     
+                 String consulta = String.format("SELECT ref.id_refeicao,\r\n" + 
+					"	   					 ref.id_usuario,\r\n" + 
+					"	  					 ref.nome,\r\n" + 
+					"     					 ref.tipo,\r\n" + 
+					"      					 ref.quantidade_maxima,\r\n" + 
+					"      					 ref.preco,\r\n" + 
+					"      					 ref.data_entrega,\r\n" + 
+					"      					 ref.hora_entrega\r\n" + 
+					"				  FROM   refeicao ref,\r\n" + 
+					"	 			 		 login usu\r\n" + 
+					"				  WHERE  ref.id_usuario = '%s' AND\r\n" + 
+					"	   					 ref.id_usuario = usu.id_usuario;", idUsuario);
+                 
+                statement = (Statement) connection.createStatement();
                 ResultSet resultSet = statement.executeQuery(consulta);
                 
-                while(resultSet.next()){
-                    //
+                while(resultSet.next()) {
+                    //refeicoes.add(new Refeicao(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3),
+			//			resultSet.getInt(4), resultSet.getDouble(5), resultSet.getDate(6), resultSet.getTime(7)));
                 }
             }catch(SQLException ex){
                 String s = "";

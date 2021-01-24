@@ -1,5 +1,8 @@
 package controller;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -9,13 +12,22 @@ import javafx.scene.layout.AnchorPane;
 public class ReservaController {
 
     @FXML
+    private ResourceBundle resources;
+
+    @FXML
+    private URL location;
+
+    @FXML
     private AnchorPane paneReserva;
 
     @FXML
     private TableView<?> tableReserva;
 
     @FXML
-    private TableColumn<?, ?> colunaNomeRefeicao;
+    private TableColumn<?, ?> colunaCodigoReserva;
+
+    @FXML
+    private TableColumn<?, ?> colunaNomeRefeicaoReservada;
 
     @FXML
     private TableColumn<?, ?> colunaQuantidadeReserva;
@@ -24,12 +36,12 @@ public class ReservaController {
     private Button botaoVoltarReserva;
 
     @FXML
-    private Button botaoAtualizarReserva;
+    void voltaMenuPrincipal(ActionEvent event) {
+
+    }
 
     @FXML
-    private Button botaoCriaReserva;
+    void initialize() {
 
-    @FXML
-    private Button botaoExcluiReserva;
-
+    }
 }

@@ -38,7 +38,7 @@ public class CriaReservaController {
     
     @FXML
     void criareserva(ActionEvent event) {
-        //TO DO Criar Reserva da linha selecionada
+        //TO PEGAR AS INFORMACOES DA linha selecionada
         rDAO.cria();
     }
     

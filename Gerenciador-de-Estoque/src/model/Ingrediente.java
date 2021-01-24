@@ -5,17 +5,20 @@ public class Ingrediente {
 	private int idIngrediente;
 	private String nomeIngrediente;
 	private String medida;
-	private int quantidade;
+	private int quantidadeEstoque;
+	private int quantidadePorPrato;
 	private int quantidadeMinima;
 	
-	public Ingrediente(int idIngrediente, String nomeIngrediente, String medida, int quantidade, int quantidadeMinima) {
+	public Ingrediente(int idIngrediente, String nomeIngrediente, String medida, int quantidadeEstoque,
+			int quantidadePorPrato, int quantidadeMinima) {
 		this.idIngrediente = idIngrediente;
 		this.nomeIngrediente = nomeIngrediente;
 		this.medida = medida;
-		this.quantidade = quantidade;
+		this.quantidadeEstoque = quantidadeEstoque;
+		this.quantidadePorPrato = quantidadePorPrato;
 		this.quantidadeMinima = quantidadeMinima;
 	}
-	
+
 	public int getIdIngrediente() {
 		return idIngrediente;
 	}
@@ -40,12 +43,20 @@ public class Ingrediente {
 		this.medida = medida;
 	}
 
-	public int getQuantidade() {
-		return quantidade;
+	public int getQuantidadeEstoque() {
+		return quantidadeEstoque;
 	}
 
-	public void setQuantidade(int quantidade) {
-		this.quantidade = quantidade;
+	public void setQuantidadeEstoque(int quantidadeEstoque) {
+		this.quantidadeEstoque = quantidadeEstoque;
+	}
+	
+	public int getQuantidadePorPrato() {
+		return quantidadePorPrato;
+	}
+
+	public void setQuantidadePorPrato(int quantidadePorPrato) {
+		this.quantidadePorPrato = quantidadePorPrato;
 	}
 
 	public int getQuantidadeMinima() {

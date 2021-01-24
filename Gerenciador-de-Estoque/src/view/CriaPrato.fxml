@@ -17,58 +17,37 @@
             <Label text="PRATO" translateX="140.0" />
          </items>
       </ToolBar>
-      <Label layoutX="34.0" layoutY="243.0" text="Tipo do Prato:" underline="true">
+      <Label layoutX="32.0" layoutY="245.0" text="Nome do Prato:" underline="true">
          <font>
             <Font name="Calibri Light" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="32.0" layoutY="278.0" text="Nome do Prato:" underline="true">
-         <font>
-            <Font name="Calibri Light" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="32.0" layoutY="319.0" text="Quantidade limite:" underline="true">
-         <font>
-            <Font name="Calibri Light" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="31.0" layoutY="361.0" text="Preço:" underline="true">
-         <font>
-            <Font name="Calibri Light" size="18.0" />
-         </font>
-      </Label>
-      <TextField fx:id="fieldPrecoPrato" layoutX="89.0" layoutY="360.0" prefHeight="25.0" prefWidth="224.0" promptText="Ex: 15,00" />
-      <TextField fx:id="fieldQtdPrato" layoutX="179.0" layoutY="318.0" prefHeight="25.0" prefWidth="135.0" promptText="Ex: 15" />
-      <TextField fx:id="fieldNomePrato" layoutX="162.0" layoutY="277.0" prefHeight="25.0" prefWidth="152.0" promptText="Ex: Temaki" />
-      <TextField fx:id="fieldTipoPrato" layoutX="158.0" layoutY="241.0" prefHeight="25.0" prefWidth="159.0" promptText="Ex: Japonesa" />
-      <Separator layoutX="67.0" layoutY="219.0" prefWidth="200.0" />
-      <Separator layoutX="66.0" layoutY="401.0" prefWidth="200.0" />
-      <Button fx:id="botaoAtualizaPrato" defaultButton="true" layoutX="51.0" layoutY="422.0" mnemonicParsing="false" onAction="#atualizaPrato" prefHeight="60.0" prefWidth="96.0" text="Atualiza">
+      <TextField fx:id="fieldNomePrato" layoutX="162.0" layoutY="247.0" prefHeight="25.0" prefWidth="152.0" promptText="Ex: Cachaça" />
+      <Separator layoutX="67.0" layoutY="224.0" prefWidth="200.0" />
+      <Separator layoutX="66.0" layoutY="293.0" prefWidth="200.0" />
+      <Button fx:id="botaoAtualizaPrato" defaultButton="true" layoutX="51.0" layoutY="325.0" mnemonicParsing="false" onAction="#atualizaPrato" prefHeight="60.0" prefWidth="96.0" text="Atualiza">
          <font>
             <Font name="Calibri Light" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="botaoVoltar" defaultButton="true" layoutX="179.0" layoutY="506.0" mnemonicParsing="false" onAction="#voltaRefeicao" prefHeight="60.0" prefWidth="96.0" text="Voltar">
+      <Button fx:id="botaoVoltar" defaultButton="true" layoutX="179.0" layoutY="408.0" mnemonicParsing="false" onAction="#voltaRefeicao" prefHeight="60.0" prefWidth="96.0" text="Voltar">
          <font>
             <Font name="Calibri Light" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="botaoCriaPrato" defaultButton="true" layoutX="51.0" layoutY="506.0" mnemonicParsing="false" onAction="#criaPrato" prefHeight="60.0" prefWidth="96.0" text="Cria">
+      <Button fx:id="botaoCriaPrato" defaultButton="true" layoutX="51.0" layoutY="405.0" mnemonicParsing="false" onAction="#criaPrato" prefHeight="60.0" prefWidth="96.0" text="Cria">
          <font>
             <Font name="Calibri Light" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="botaoCriaIngredientes" defaultButton="true" layoutX="179.0" layoutY="422.0" mnemonicParsing="false" onAction="#abrirCriaIngrediente" prefHeight="60.0" prefWidth="96.0" text="Cria Ingredientes">
+      <Button fx:id="botaoCriaIngredientes" defaultButton="true" layoutX="179.0" layoutY="327.0" mnemonicParsing="false" onAction="#abrirCriaIngrediente" prefHeight="60.0" prefWidth="96.0" text="Cria Ingredientes">
          <font>
             <Font name="Calibri Light" size="11.0" />
          </font>
       </Button>
       <TableView fx:id="tablePrato" layoutX="6.0" layoutY="40.0" prefHeight="174.0" prefWidth="323.0">
         <columns>
-          <TableColumn fx:id="colunaTipoPrato" prefWidth="81.0" text="Tipo" />
-          <TableColumn fx:id="colunaNomePrato" prefWidth="88.0" text="Nome" />
-            <TableColumn fx:id="colunaQuantidadePrato" prefWidth="82.0" text="Quantidade" />
-            <TableColumn fx:id="colunaPrecoPrato" prefWidth="71.0" text="Preço" />
+          <TableColumn fx:id="colunaNomePrato" prefWidth="322.0" text="Nome" />
         </columns>
       </TableView>
    </children>

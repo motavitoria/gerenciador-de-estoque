@@ -21,7 +21,6 @@
       <PasswordField fx:id="fieldSenha" layoutX="132.0" layoutY="229.0" prefHeight="26.0" prefWidth="152.0" promptText="Digite sua senha" />
       <Separator layoutX="44.0" layoutY="300.0" prefHeight="10.0" prefWidth="248.0" />
       <Button fx:id="botaoEntrar" layoutX="119.0" layoutY="338.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="97.0" text="ENTRAR" />
-      <Label fx:id="lblErrors" alignment="CENTER" layoutX="8.0" layoutY="95.0" prefHeight="23.0" prefWidth="275.0" textFill="#ff6354">
-      </Label>
+      <Label fx:id="labelCriarCadastro" layoutX="123.0" layoutY="414.0" onMouseClicked="#abrirCriarCadastro" text="Criar Cadastro?" underline="true" />
    </children>
 </AnchorPane>

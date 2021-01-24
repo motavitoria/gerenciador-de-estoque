@@ -71,6 +71,6 @@ public class CriaRefeicaoController {
 
     @FXML
     void initialize() {
- 
+
     }
 }
